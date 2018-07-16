@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!-- html body -->
+    <p>This example uses the addEventListener() method to attach a click event to a button.</p>
+
+    <input id="screen" type="text">
+
+    <button class="btn-cal" value="1">1</button>
+    <button class="btn-cal" value="2">2</button>
+
+    <p>
+        <strong>Note:</strong> The addEventListener() method is not supported in Internet Explorer 8 and earlier versions.</p>
+
+    <p id="demo"></p>
+
+    <!-- javascript -->
+    <script>
+        let doc = document.getElementsByClassName("btn-cal")
+        //debugger;
+        for (let i = 0; i < doc.length; i++) {
+            doc[i].addEventListener('click', dom => {
+                let {
+                    value
+                } = dom.currentTarget
+                document.getElementById("screen").value = value;
+            })
+        }
+    </script>
+</body>
+
+</html>
